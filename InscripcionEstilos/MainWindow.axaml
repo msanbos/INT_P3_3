@@ -24,7 +24,7 @@
         <!--Grid.Row en la fila 1 para estirarse al ancho disponible en esa fila (*)-->
         <!--Será ScrollViewer por si el contenido excete el espacio disponible -->
         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Background="{DynamicResource BrushFondo}">
-            <StackPanel  Spacing="10">
+            <StackPanel x:Name="PanelFormulario" Spacing="10">
                 <!--Bloque Datos personales-->
                 <Border Classes="tarjeta" VerticalAlignment="Top">
                     <StackPanel Spacing="20">
@@ -55,7 +55,7 @@
                         <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="140,*" RowSpacing="12">
                             <!--Curso-->
                             <TextBlock Grid.Row="0" Grid.Column="0" Text="Curso:" FontSize="12" VerticalAlignment="Center"/>
-                            <ComboBox Grid.Row="0" Grid.Column="1" FontSize="12" >
+                            <ComboBox x:Name="CursoComboBox" Grid.Row="0" Grid.Column="1" FontSize="12" >
                                 <ComboBoxItem Content="Desarrollo de interfaces con Avalonia" IsSelected="True"/>
                                 <ComboBoxItem Content="Desarrollo de aplicaciones web"/>
                                 <ComboBoxItem Content="Administración de sistemas e infraestructura"/>
