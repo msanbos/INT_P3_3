@@ -2,6 +2,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="using:InscripcionEstilos"
         mc:Ignorable="d" 
         Width="760" Height="760"
         MinWidth="560" MinHeight="480"
@@ -33,17 +34,14 @@
                         <!--Campos de entrada-->
                         <Grid RowDefinitions="Auto,Auto,Auto,Auto" ColumnDefinitions="140,*" RowSpacing="12" >
                             <!--Nombre-->
-                            <TextBlock Grid.Row="0" Grid.Column="0" Text="Nombre:" FontSize="12" VerticalAlignment="Center"/>
-                            <TextBox Grid.Row="0" Grid.Column="1" Watermark="Tu nombre" FontSize="12" />
+                            <local:EtiquetaCampo Grid.Row="0" Grid.ColumnSpan="2" Etiqueta="Nombre:"/>
                             <!--Apellidos-->
-                            <TextBlock Grid.Row="1" Grid.Column="0" Text="Apellidos:" FontSize="12" VerticalAlignment="Center"/>
-                            <TextBox Grid.Row="1" Grid.Column="1" Watermark="Tu apellidos" FontSize="12"/>
+                            <local:EtiquetaCampo Grid.Row="1" Grid.ColumnSpan="2" Etiqueta="Apellidos:"/>
                             <!--Fecha de nacimiento-->
                             <TextBlock Grid.Row="2" Grid.Column="0" Text="Fecha de nacimiento:" FontSize="12" VerticalAlignment="Center"/>
                             <DatePicker Grid.Row="2" Grid.Column="1" FontSize="12"/>
                             <!--Email-->
-                            <TextBlock Grid.Row="3" Grid.Column="0" Text="Correo electrónico" FontSize="12" VerticalAlignment="Center"/>
-                            <TextBox Grid.Row="3" Grid.Column="1" Watermark="nombre@correo.es" FontSize="12"/>
+                            <local:EtiquetaCampo Grid.Row="3" Grid.ColumnSpan="2" Etiqueta="Correo electrónico:"/>
                         </Grid>             
                     </StackPanel>
                 </Border>
