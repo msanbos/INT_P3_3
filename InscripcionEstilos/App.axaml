@@ -6,6 +6,43 @@
 
     <Application.Styles>
         <FluentTheme />
+
+        <!-- Botón primario (clase .primary) -->
+        <Style Selector="Button.primary">
+            <Setter Property="Background" Value="{DynamicResource BrushPrimario}"/>
+            <Setter Property="Foreground" Value="{DynamicResource BrushTextoSobrePrimario}"/>
+            <Setter Property="Width" Value="110"/>
+        </Style>
+
+        <!-- Todos los TextBox-->
+        <Style Selector="TextBox">
+            <Setter Property="Padding" Value="10,8"/>
+            <Setter Property="CornerRadius" Value="6"/>
+            <Setter Property="FontSize" Value="12"/>
+        </Style>
+
+        <!--Encabezados de sección (clase .seccion) -->
+        <Style Selector="TextBlock.seccion">
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="{DynamicResource BrushPrimario}"/>
+        </Style>
+
+        <!-- Tarjetas (clase .tarjeta) -->
+        <Style Selector="Border.tarjeta">
+            <Setter Property="Background" Value="{DynamicResource BrushTarjeta}"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="6"/>
+        </Style>
+
+        <!--Para evitar el fallo hover del botón enviar-->
+        <Style Selector="Button.primary:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource BrushPrimario}"/>
+            <Setter Property="TextElement.Foreground" Value="{DynamicResource BrushTextoSobrePrimario}"/>
+            <Setter Property="Opacity" Value="0.85"/>
+        </Style>
     </Application.Styles>
 
     <!--Las paletas de los temas-->

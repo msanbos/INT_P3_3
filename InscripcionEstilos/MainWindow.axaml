@@ -7,15 +7,16 @@
         MinWidth="560" MinHeight="480"
         d:DesignWidth="760" d:DesignHeight="760"
         x:Class="InscripcionEstilos.MainWindow"
-        Background="{DynamicResource BrushFondo}" 
+        Background="{DynamicResource BrushFondo}"
         Title="Inscripción del curso">
     <!--Distribución del Grid Principal: Cabecera - Fila 0 (Auto) + Formulario (Lo que sobre) + Pie(Auto)-->
     <Grid RowDefinitions="Auto,*,Auto">
         <!--Cabecera-->
         <Border Grid.Row="0" Background="{DynamicResource BrushPrimario}" Padding="10"><!--Seleccionamos que este borde sera la primera fila(0)-->
             <StackPanel Spacing="4" >
+                <ToggleSwitch x:Name="TemaSwitch" OffContent="Claro" OnContent="Oscuro" IsCheckedChanged="TemaSwitch_IsCheckedChanged"/>
                 <TextBlock Text="Inscripción del curso" FontSize="14" FontWeight="Bold" Foreground="{DynamicResource BrushTextoSobrePrimario}" />
-                <TextBlock Text="IES El Majuelo - Formación complementaria" FontSize="10" Foreground="{DynamicResource BrushTextoSobrePrimario}"/>                
+                <TextBlock Text="IES El Majuelo - Formación complementaria" FontSize="10" Foreground="{DynamicResource BrushTextoSobrePrimario}"/>   
             </StackPanel>
         
         <!--Formulario-->
@@ -25,9 +26,9 @@
         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Background="{DynamicResource BrushFondo}">
             <StackPanel  Spacing="10">
                 <!--Bloque Datos personales-->
-                <Border Margin="10" Padding="10" BorderThickness="1"  VerticalAlignment="Top" Background="{DynamicResource BrushTarjeta}">
+                <Border Classes="tarjeta" VerticalAlignment="Top">
                     <StackPanel Spacing="20">
-                        <TextBlock Text="Datos personales" FontSize="12"  FontWeight="Bold" Foreground="{DynamicResource BrushPrimario}"/>
+                        <TextBlock Classes="seccion" Text="Datos personales"/>
                         <!-- LOS CAMPOS DE ENTRADA CON GRID -->
                         <!--Campos de entrada-->
                         <Grid RowDefinitions="Auto,Auto,Auto,Auto" ColumnDefinitions="140,*" RowSpacing="12" >
@@ -48,9 +49,9 @@
                 </Border>
 
                 <!--Bloque Curso-->
-                <Border Margin="10" Padding="10" BorderThickness="1"  VerticalAlignment="Top" Background="{DynamicResource BrushTarjeta}">
+                <Border Classes="tarjeta" VerticalAlignment="Top">
                     <StackPanel Spacing="20">
-                        <TextBlock Text="Curso" FontSize="12"  FontWeight="Bold" Foreground="{DynamicResource BrushPrimario}"/>
+                        <TextBlock Classes="seccion" Text="Curso"/>
                         <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="140,*" RowSpacing="12">
                             <!--Curso-->
                             <TextBlock Grid.Row="0" Grid.Column="0" Text="Curso:" FontSize="12" VerticalAlignment="Center"/>
@@ -70,9 +71,9 @@
                 </Border>
                 
                 <!--Bloque Preferencias-->
-                <Border Margin="10" Padding="10" BorderThickness="1"  VerticalAlignment="Top" Background="{DynamicResource BrushTarjeta}">
+                <Border Classes="tarjeta" VerticalAlignment="Top">
                     <StackPanel Spacing="20">
-                        <TextBlock Text="Preferencias" FontSize="12"  FontWeight="Bold" Foreground="{DynamicResource BrushPrimario}"/>
+                        <TextBlock Classes="seccion" Text="Preferencias"/>
                         <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="140,*" RowSpacing="12">
                             <TextBlock Grid.Row="0" Grid.Column="0" Text="Intereses: " FontSize="12" VerticalAlignment="Center"/>    
                             <Grid Grid.Row="0" Grid.Column="1" RowDefinitions="Auto,Auto" ColumnDefinitions="*,*,*" RowSpacing="12">
@@ -96,18 +97,18 @@
                     </StackPanel>
                 </Border>
                 <!--Bloque Observaciones-->
-                <Border Margin="10" Padding="10" BorderThickness="1" VerticalAlignment="Top" Background="{DynamicResource BrushTarjeta}">
+                <Border Classes="tarjeta" VerticalAlignment="Top">
                     <StackPanel Spacing="10">
-                        <TextBlock Text="Observaciones" FontSize="12" FontWeight="Bold" Foreground="{DynamicResource BrushPrimario}"/>
+                        <TextBlock Classes="seccion" Text="Observaciones"/>
                         <TextBox Height="80" AcceptsReturn="True" TextWrapping="Wrap" MaxLength="500" Watermark="Escribe aquí cualquier comentario..." FontSize="12"/>
                         <TextBlock Text="Máximo 500 caracteres." FontSize="10" Foreground="Gray"/>
                     </StackPanel>
                 </Border>
 
                 <!--AMPLIACIÓN: Horario y facturación-->
-                <Border Margin="10,10,10,10" Padding="10" BorderThickness="1" VerticalAlignment="Top" Background="{DynamicResource BrushTarjeta}">
+                <Border Classes="tarjeta" VerticalAlignment="Top">
                     <StackPanel Spacing="20">
-                        <TextBlock Text="Horario y facturación" FontSize="12" FontWeight="Bold" Foreground="{DynamicResource BrushPrimario}"/>
+                        <TextBlock Classes="seccion" Text="Horario y facturación"/>
                         
                         <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="140,*" RowSpacing="16">
                             
@@ -207,7 +208,7 @@
         <Border Grid.Row="2" Background="{DynamicResource BrushTarjeta}" BorderThickness="0,1,0,0" BorderBrush="LightGray" Padding="10">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="10">
                 <Button Content="Limpiar" FontSize="12"/>
-                <Button Content="Enviar" FontSize="12" Background="{DynamicResource BrushPrimario}" Foreground="{DynamicResource BrushTextoSobrePrimario}"/>
+                <Button Classes="primary" Content="Enviar" FontSize="12"/>
             </StackPanel>
         </Border>
     </Grid>          
